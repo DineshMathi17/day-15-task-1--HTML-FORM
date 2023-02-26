@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML-FORM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h3>HTML-FORM</h3>
+		<table border="4">
+			<thead>
+				<tr>
+					<th>First Name</th>
+					<td><input type="text" name="First Name" id="First Name"></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>Last Name</th>
+					<td><input type="text" name="Last Name" id="Last Name"></td>
+				</tr>
+				<tr>
+					<th>address</th>
+					<td><input type="text" name="address" id="address"></td>
+				</tr>
+                <tr>
+					<th>pincode</th>
+					<td><input type="text" name="pincode" id="pincode"></td>
+				</tr>
+                <tr>
+					<th>Gender</th>
+					<td><input type="text" name="Gender" id="Gender"></td>
+				</tr>
+                <tr>
+					<th>choices of food</th>
+					<td><input type="text" name="choices of food" id="choices of food"></td>
+				</tr>
+                <tr>
+					<th>state</th>
+					<td><input type="text" name="state" id="state"></td>
+				</tr>
+                <tr>
+					<th>Country</th>
+					<td><input type="text" name="Country" id="Country"></td>
+				</tr>
+				<tr id="btna">
+					<td colspan="2"><input type="button" name="button" id="btn" value="Add" onclick="AddRow()"></td>
+				</tr>
+			</tbody>
+		</table>
+
+    <table border="4" id="show">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>address</th>
+                <th>pincode</th>
+                <th>Gender</th>
+                <th>choices of food</th>
+                <th>state</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+    </table>
+
+
+<script>
+    
+    var list1 = [];
+    var list2 = [];
+    var list3 = [];
+    var list4 = [];
+    var list5 = [];
+    var list6 = [];
+    var list7 = [];
+    var list8 = [];
+
+
+
+    var n = 1;
+    var x = 0;
+
+    function AddRow(){
+
+        var AddRown = document.getElementById('show');
+        var NewRow = AddRown.insertRow(n);
+
+        list1[x] = document.getElementById("First Name").value;
+        list2[x] = document.getElementById("Last Name").value;
+        list3[x] = document.getElementById("address").value;
+        list4[x] = document.getElementById("pincode").value;
+        list5[x] = document.getElementById("Gender").value;
+        list6[x] = document.getElementById("choices of food").value;
+        list7[x] = document.getElementById("state").value;
+        list8[x] = document.getElementById("Country").value;
+
+        var cel1 = NewRow.insertCell(0);
+        var cel2 = NewRow.insertCell(1);
+        var cel3 = NewRow.insertCell(2);
+        var cel4 = NewRow.insertCell(3);
+        var cel5 = NewRow.insertCell(4);
+        var cel6 = NewRow.insertCell(5);
+        var cel7 = NewRow.insertCell(6);
+        var cel8 = NewRow.insertCell(7);
+
+        cel1.innerHTML = list1[x];
+        cel2.innerHTML = list2[x];
+        cel3.innerHTML = list3[x];
+        cel4.innerHTML = list4[x];
+        cel5.innerHTML = list5[x];
+        cel6.innerHTML = list6[x];
+        cel7.innerHTML = list7[x];
+        cel8.innerHTML = list8[x];
+
+        n++;
+        x++;
+    }
+
+</script>
+</body>
+</html>
